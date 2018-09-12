@@ -42,6 +42,7 @@ public class MyCrawler extends WebCrawler {
             /**选择p标签*/
             Elements h=document.select("h1");
             Elements author=document.select("cite");
+            Element time=document.getElementById("last-update");
             Elements element=document.select("p");
             /**抽取p标签里的text，并保留换行换行，element.text()方法没保留换行*/
             String content=Jsoup.clean(element.toString(), "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
@@ -51,9 +52,13 @@ public class MyCrawler extends WebCrawler {
 //            System.out.println("链接个数 " + links.size());
 //            System.out.println(h.text());
 //            System.out.println(content);
-            sava.write(h.text());
-            sava.write(author.text());
-            sava.write(content);
+            sava.write("标题："+h.text());
+            sava.write("作者: "+author.text());
+            sava.write("时间: "+time.text());
+            sava.write("内容: "+content);
+            sava.write("" +
+                    "" +
+                    "" );
         }
     }
 

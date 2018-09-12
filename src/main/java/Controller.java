@@ -16,7 +16,7 @@ import java.util.Random;
 public class Controller {
     public static void main(String[] args) throws Exception {
         String crawlStorageFolder = "/data/crawl/root";//文件存储位置
-        int numberOfCrawlers = 1;//线程数量
+        int numberOfCrawlers = 5;//线程数量
 
         CrawlConfig config = new CrawlConfig();// 定义爬虫配置
         config.setCrawlStorageFolder(crawlStorageFolder);// 设置爬虫文件存储位置
